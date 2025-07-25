@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisypho - Intelligent Automation for Everyone</title>
+    <link rel="icon" type="image/png" href="sisypho_logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="#" class="logo-link">
+                    <img src="sisypho_logo.png" alt="Sisypho" class="logo-img">
+                    <span class="logo-text">Sisypho</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#memo" class="nav-link">Memo</a>
+                <button class="btn btn-primary nav-cta">Request Demo</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">No-code scripting tool</span> to never do the same work twice
+                    </h1>
+                    <p class="hero-subtitle">
+                        Replace manual scripts, RPA tools, and repetitive desktop work with intelligent automation. 
+                        Just show Sisypho what you do once, describe it in natural language and it handles the rest forever.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-large" id="demo-btn">Request Demo</button>
+                        <p class="cta-note">Setup in under 10 minutes</p>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="conversation-demo">
+                        <div class="conversation-flow">
+                            <div class="flow-step">
+                                <div class="step-label">Sisypho AI</div>
+                                <div class="step-message ai-msg">
+                                    I analyzed your screen recording. Describe what you did in one sentence.
+                                </div>
+                            </div>
+                            
+                            <div class="flow-step">
+                                <div class="step-label">You</div>
+                                <div class="step-message user-msg">
+                                    Downloaded invoice PDFs from email and uploaded them to accounting software
+                                </div>
+                            </div>
+                            
+                            <div class="flow-step">
+                                <div class="step-label">Sisypho AI</div>
+                                <div class="step-message ai-msg">
+                                    I see the pattern. What varies each time - the sender, invoice number, or both?
+                                </div>
+                            </div>
+                            
+                            <div class="flow-step">
+                                <div class="step-label">You</div>
+                                <div class="step-message user-msg">
+                                    Different senders, invoice amounts, and due dates change
+                                </div>
+                            </div>
+                            
+                            <div class="flow-step">
+                                <div class="step-label">Sisypho AI</div>
+                                <div class="step-message ai-msg">
+                                    Perfect. When should this workflow run automatically?
+                                </div>
+                            </div>
+                            
+                            <div class="flow-step">
+                                <div class="step-label">You</div>
+                                <div class="step-message user-msg">
+                                    Every weekday at 10 AM
+                                </div>
+                            </div>
+                            
+                            <div class="flow-step typing-step">
+                                <div class="step-label">Sisypho AI</div>
+                                <div class="step-message ai-msg generating">
+                                    ✨ Generating your workflow with dynamic variables for sender, amount, and due date...
+                                    <div class="typing-indicator">
+                                        <span class="dot-pulse"></span>
+                                        <span class="dot-pulse"></span>
+                                        <span class="dot-pulse"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Computer Work Reimagined</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-number">01</div>
+                        <h3 class="feature-title">Natural Language Setup</h3>
+                        <p class="feature-description">
+                            Describe your workflow in plain English. No complex scripting or technical expertise required.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">02</div>
+                        <h3 class="feature-title">Robust & Reliable</h3>
+                        <p class="feature-description">
+                            Built-in assertions and safety guardrails prevent unexpected LLM actions. Your automations stay within defined boundaries with intelligent error recovery.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">03</div>
+                        <h3 class="feature-title">Enterprise Ready</h3>
+                        <p class="feature-description">
+                            Built-in guardrails, security compliance, and scalability for mission-critical business processes.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">04</div>
+                        <h3 class="feature-title">Intelligent Automation</h3>
+                        <p class="feature-description">
+                            Sisypho understands your workflow deeply, adapts automatically when things change, and suggests optimizations to make your processes even more efficient.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="memo" id="memo">
+            <div class="memo-container">
+                <div class="memo-header">
+                    <h2 class="memo-title">Why We Built Sisypho</h2>
+                </div>
+                
+                <div class="memo-content">
+                    <div class="memo-text">
+                        <p>
+                            When we were software engineers at big tech companies, we learned how engineers would quickly build internal tools and scripts to minimize repetitive work.
+                        </p>
+                        
+                        <p>
+                            Scripts to fix known issues in order management systems that oncall engineers could run locally without needing to manually check multiple platforms and perform the same actions repeatedly across different pages. Or automating latency tests for product launches after reformatting test data from spreadsheets provided by the data labeling team.
+                        </p>
+                        
+                        <p>
+                            Having to do repetitive tasks isn't just limited to software engineering. Every computer job has them, whether in marketing, logistics, accounting, or beyond. However, the tools that software engineers use, including the terminal that comes with your laptop where you can run a bash or python script, aren't accessible to most people.
+                        </p>
+                        
+                        <p>
+                            We believe Sisypho changes that by letting everyone automate anything on their computer, even tasks that don't have traditional programming interfaces.
+                        </p>
+                    </div>
+                    
+                    <div class="memo-signature">
+                        <p>Saumik and Harish, co-founders at Sisypho</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Unlock Your Computer's Potential?</h2>
+                    <p class="cta-subtitle">
+                        Stop doing repetitive work and start automating everything with Sisypho
+                    </p>
+                    <button class="btn btn-primary btn-large cta-button">Request Your Demo</button>
+                    <p class="cta-note">Setup takes less than 10 minutes</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="sisypho_logo.png" alt="Sisypho" class="footer-logo-img">
+                        <span class="footer-logo-text">Sisypho</span>
+                    </div>
+                    <p>Intelligent automation for everyone</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#memo">Why We Built Sisypho</a>
+                        <a href="#" onclick="document.querySelector('.cta-button').click(); return false;">Request Demo</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#memo">Memo</a>
+                        <a href="mailto:founders@zero1labs.ca">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <p class="footer-address">108 College St<br>Toronto, ON M5G 0C6</p>
+                        <a href="mailto:founders@zero1labs.ca">founders@zero1labs.ca</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sisypho. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
