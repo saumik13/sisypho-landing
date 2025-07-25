@@ -68,11 +68,6 @@ h1, h2, h3, h4 {
     opacity: 0.8;
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
-    display: block;
-}
 
 .logo-text {
     font-family: 'DM Sans', sans-serif;
@@ -944,11 +939,6 @@ h1, h2, h3, h4 {
     margin-bottom: 12px;
 }
 
-.footer-logo-img {
-    height: 36px;
-    width: auto;
-    filter: brightness(0) saturate(100%) invert(38%) sepia(75%) saturate(2288%) hue-rotate(229deg) brightness(95%) contrast(92%);
-}
 
 .footer-logo-text {
     font-family: 'DM Sans', sans-serif;
@@ -1324,16 +1314,8 @@ h1, h2, h3, h4 {
         height: 6px;
     }
     
-    .logo-img {
-        height: 32px;
-    }
-    
     .logo-text {
         font-size: 18px;
-    }
-    
-    .footer-logo-img {
-        height: 28px;
     }
     
     .footer-logo-text {
