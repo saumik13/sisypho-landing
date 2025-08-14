@@ -20,14 +20,14 @@
             <div class="nav-links">
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#memo" class="nav-link">Memo</a>
+                <a href="memo.html" class="nav-link">Memo</a>
                 <button class="btn btn-primary nav-cta">Request Demo</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero gradient-hero">
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">
@@ -37,68 +37,33 @@
                         Replace manual scripts, RPA tools, and repetitive desktop work with intelligent automation. 
                         Just show Sisypho what you do once, describe it in natural language and it handles the rest forever.
                     </p>
-                    <div class="hero-cta">
-                        <button class="btn btn-primary btn-large" id="demo-btn">Request Demo</button>
-                        <p class="cta-note">Setup in under 10 minutes</p>
+                    <div class="hero-cta hero-actions">
+                        <a href="#" class="btn-hero btn-hero-primary download-macos" aria-label="Download Sisypho for macOS">
+                            <img src="apple_logo_black.svg" alt="Apple" class="icon icon-apple" style="margin-right:8px" />
+                            <span>Download for macOS</span>
+                        </a>
+                        <a href="#" class="btn-hero btn-hero-secondary download-chrome" aria-label="Install Sisypho Chrome Extension">
+                            <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin-right:8px">
+                                <defs>
+                                    <linearGradient id="a" x1="3.2173" y1="15" x2="44.7812" y2="15" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d93025"/><stop offset="1" stop-color="#ea4335"/></linearGradient>
+                                    <linearGradient id="b" x1="20.7219" y1="47.6791" x2="41.5039" y2="11.6837" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fcc934"/><stop offset="1" stop-color="#fbbc04"/></linearGradient>
+                                    <linearGradient id="c" x1="26.5981" y1="46.5015" x2="5.8161" y2="10.506" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1e8e3e"/><stop offset="1" stop-color="#34a853"/></linearGradient>
+                                </defs>
+                                <circle cx="24" cy="23.9947" r="12" fill="#fff"/>
+                                <path d="M3.2154,36A24,24,0,1,0,12,3.2154,24,24,0,0,0,3.2154,36ZM34.3923,18A12,12,0,1,1,18,13.6077,12,12,0,0,1,34.3923,18Z" fill="none"/>
+                                <path d="M24,12H44.7812a23.9939,23.9939,0,0,0-41.5639.0029L13.6079,30l.0093-.0024A11.9852,11.9852,0,0,1,24,12Z" fill="url(#a)"/>
+                                <circle cx="24" cy="24" r="9.5" fill="#1a73e8"/>
+                                <path d="M34.3913,30.0029,24.0007,48A23.994,23.994,0,0,0,44.78,12.0031H23.9989l-.0025.0093A11.985,11.985,0,0,1,34.3913,30.0029Z" fill="url(#b)"/>
+                                <path d="M13.6086,30.0031,3.218,12.006A23.994,23.994,0,0,0,24.0025,48L34.3931,30.0029l-.0067-.0068a11.9852,11.9852,0,0,1-20.7778.007Z" fill="url(#c)"/>
+                            </svg>
+                            <span>Install Chrome Extension</span>
+                        </a>
+                        <p class="cta-note">*macOS app only. Chrome extension required to automate browser actions.</p>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="conversation-demo">
-                        <div class="conversation-flow">
-                            <div class="flow-step">
-                                <div class="step-label">Sisypho AI</div>
-                                <div class="step-message ai-msg">
-                                    I analyzed your screen recording. Describe what you did in one sentence.
-                                </div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-label">You</div>
-                                <div class="step-message user-msg">
-                                    Downloaded invoice PDFs from email and uploaded them to accounting software
-                                </div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-label">Sisypho AI</div>
-                                <div class="step-message ai-msg">
-                                    I see the pattern. What varies each time - the sender, invoice number, or both?
-                                </div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-label">You</div>
-                                <div class="step-message user-msg">
-                                    Different senders, invoice amounts, and due dates change
-                                </div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-label">Sisypho AI</div>
-                                <div class="step-message ai-msg">
-                                    Perfect. Should this workflow run automatically?
-                                </div>
-                            </div>
-                            
-                            <div class="flow-step">
-                                <div class="step-label">You</div>
-                                <div class="step-message user-msg">
-                                    Yes, every weekday at 10 AM
-                                </div>
-                            </div>
-                            
-                            <div class="flow-step typing-step">
-                                <div class="step-label">Sisypho AI</div>
-                                <div class="step-message ai-msg generating">
-                                    ✨ Generating your workflow with dynamic variables for sender, amount, and due date...
-                                    <div class="typing-indicator">
-                                        <span class="dot-pulse"></span>
-                                        <span class="dot-pulse"></span>
-                                        <span class="dot-pulse"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="screenshot-frame">
+                        <img src="sisypho_demo.png" alt="Sisypho app screenshot" class="screenshot-img">
                     </div>
                 </div>
             </div>
@@ -143,11 +108,75 @@
         <section class="pricing" id="pricing">
             <div class="container">
                 <div class="pricing-header">
-                    <h2 class="section-title">Simple, Transparent Pricing</h2>
+                    <h2 class="section-title">Pricing</h2>
                     <p class="pricing-subtitle">Choose the plan that fits your automation needs</p>
                 </div>
                 
                 <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <h3 class="pricing-tier">Free</h3>
+                            <div class="pricing-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">0</span>
+                                <span class="price-period">/month</span>
+                            </div>
+                            <p class="pricing-description">Try Sisypho free for 4 weeks - no credit card required</p>
+                        </div>
+                        
+                        <div class="pricing-features">
+                            <ul class="features-list">
+                                <li class="feature-item">
+                                    <svg class="feature-icon" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>4 weeks completely free</span>
+                                </li>
+                                <li class="feature-item">
+                                    <svg class="feature-icon" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Up to 3 automation workflows</span>
+                                </li>
+                                <li class="feature-item">
+                                    <svg class="feature-icon" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Basic scheduling</span>
+                                </li>
+                                <li class="feature-item">
+                                    <svg class="feature-icon" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Community support</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-cta">
+                            <button class="btn btn-secondary pricing-btn">
+                                <img src="apple_logo_black.svg" alt="Apple" class="btn-icon" />
+                                Download
+                            </button>
+                            <button class="btn btn-secondary pricing-btn">
+                                <svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="btn-icon">
+                                    <defs>
+                                        <linearGradient id="a" x1="3.2173" y1="15" x2="44.7812" y2="15" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d93025"/><stop offset="1" stop-color="#ea4335"/></linearGradient>
+                                        <linearGradient id="b" x1="20.7219" y1="47.6791" x2="41.5039" y2="11.6837" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fcc934"/><stop offset="1" stop-color="#fbbc04"/></linearGradient>
+                                        <linearGradient id="c" x1="26.5981" y1="46.5015" x2="5.8161" y2="10.506" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1e8e3e"/><stop offset="1" stop-color="#34a853"/></linearGradient>
+                                    </defs>
+                                    <circle cx="24" cy="23.9947" r="12" fill="#fff"/>
+                                    <path d="M3.2154,36A24,24,0,1,0,12,3.2154,24,24,0,0,0,3.2154,36ZM34.3923,18A12,12,0,1,1,18,13.6077,12,12,0,0,1,34.3923,18Z" fill="none"/>
+                                    <path d="M24,12H44.7812a23.9939,23.9939,0,0,0-41.5639.0029L13.6079,30l.0093-.0024A11.9852,11.9852,0,0,1,24,12Z" fill="url(#a)"/>
+                                    <circle cx="24" cy="24" r="9.5" fill="#1a73e8"/>
+                                    <path d="M34.3913,30.0029,24.0007,48A23.994,23.994,0,0,0,44.78,12.0031H23.9989l-.0025.0093A11.985,11.985,0,0,1,34.3913,30.0029Z" fill="url(#b)"/>
+                                    <path d="M13.6086,30.0031,3.218,12.006A23.994,23.994,0,0,0,24.0025,48L34.3931,30.0029l-.0067-.0068a11.9852,11.9852,0,0,1-20.7778.007Z" fill="url(#c)"/>
+                                </svg>
+                                Install Extension
+                            </button>
+                        </div>
+                    </div>
+                    
                     <div class="pricing-card">
                         <div class="pricing-card-header">
                             <h3 class="pricing-tier">Basic</h3>
@@ -195,12 +224,11 @@
                         </div>
                         
                         <div class="pricing-cta">
-                            <button class="btn btn-secondary pricing-btn">Get Started</button>
+                            <button class="btn btn-secondary pricing-btn">Get Basic</button>
                         </div>
                     </div>
                     
                     <div class="pricing-card pricing-card-featured">
-                        <div class="pricing-badge">Most Popular</div>
                         <div class="pricing-card-header">
                             <h3 class="pricing-tier">Pro</h3>
                             <div class="pricing-price">
@@ -253,61 +281,15 @@
                         </div>
                         
                         <div class="pricing-cta">
-                            <button class="btn btn-primary pricing-btn">Get Started</button>
+                            <button class="btn btn-primary pricing-btn">Get Pro</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="pricing-footer">
-                    <p class="pricing-note">All plans include a 14-day free trial. No credit card required.</p>
-                </div>
             </div>
         </section>
 
-        <section class="memo" id="memo">
-            <div class="memo-container">
-                <div class="memo-header">
-                    <h2 class="memo-title">Why We Built Sisypho</h2>
-                </div>
-                
-                <div class="memo-content">
-                    <div class="memo-text">
-                        <p>
-                            When we were software engineers at big tech companies, we learned how engineers would quickly build internal tools and scripts to minimize repetitive work.
-                        </p>
-                        
-                        <p>
-                            Scripts to fix known issues in order management systems that oncall engineers could run locally without needing to manually check multiple platforms and perform the same actions repeatedly across different pages. Or automating latency tests for product launches after reformatting test data from spreadsheets provided by the data labeling team.
-                        </p>
-                        
-                        <p>
-                            Having to do repetitive tasks isn't just limited to software engineering. Any job that heavily uses a computer has them, whether in marketing, logistics, accounting, or beyond. However, the tools that software engineers use, including the terminal that comes with your laptop where you can run a bash or python script, aren't accessible to most people.
-                        </p>
-                        
-                        <p>
-                            We believe Sisypho changes that by letting anyone automate anything on their computer, even tasks that don't have traditional programming interfaces.
-                        </p>
-                    </div>
-                    
-                    <div class="memo-signature">
-                        <p>- Saumik and Harish, co-founders at Sisypho</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="demo-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2 class="cta-title">Ready to Unlock Your Computer's Potential?</h2>
-                    <p class="cta-subtitle">
-                        Stop doing repetitive work and start automating everything with Sisypho
-                    </p>
-                    <button class="btn btn-primary btn-large cta-button">Request Your Demo</button>
-                    <p class="cta-note">Setup takes less than 10 minutes</p>
-                </div>
-            </div>
-        </section>
 
     </main>
 
@@ -328,7 +310,7 @@
                     </div>
                     <div class="footer-column">
                         <h4>Company</h4>
-                        <a href="#memo">Memo</a>
+                        <a href="memo.html">Memo</a>
                         <a href="mailto:saumik@sisypho.com">Contact</a>
                     </div>
                     <div class="footer-column">
