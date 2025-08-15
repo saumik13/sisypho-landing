@@ -18,10 +18,10 @@
                 </a>
             </div>
             <div class="nav-links">
-                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="memo.html" class="nav-link">Memo</a>
-                <button class="btn btn-primary nav-cta">Request Demo</button>
+                <button class="btn btn-primary nav-cta">Get Started</button>
             </div>
         </nav>
     </header>
@@ -69,37 +69,68 @@
             </div>
         </section>
 
-        <section class="features" id="features">
+        <section class="how-it-works" id="how-it-works">
             <div class="container">
-                <h2 class="section-title">Computer Work Reimagined</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-number">01</div>
-                        <h3 class="feature-title">Natural Language Setup</h3>
-                        <p class="feature-description">
-                            Describe your workflow in plain English. No complex scripting or technical expertise required.
-                        </p>
+                <div class="how-it-works-content">
+                    <div class="section-header">
+                        <h2 class="section-title">Describe, record, automate</h2>
+                        <p class="section-subtitle">With Sisypho, generate a skill for your computer to be able to do any repetitive work for you. In just a few simple steps, you describe work you have to do repetitively, show Sisypho a recording, and Sisypho will generate a skill for your computer.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-number">02</div>
-                        <h3 class="feature-title">Robust & Reliable</h3>
-                        <p class="feature-description">
-                            Built-in assertions and safety guardrails prevent unexpected LLM actions. Your automations stay within defined boundaries with intelligent error recovery.
-                        </p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-number">03</div>
-                        <h3 class="feature-title">Enterprise Ready</h3>
-                        <p class="feature-description">
-                            Built-in guardrails, security compliance, and scalability for mission-critical business processes.
-                        </p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-number">04</div>
-                        <h3 class="feature-title">Intelligent Automation</h3>
-                        <p class="feature-description">
-                            Sisypho understands your workflow deeply, adapts automatically when things change, and suggests optimizations to make your processes even more efficient.
-                        </p>
+
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-info">
+                                <h3 class="step-title">01. Describe Your Task</h3>
+                                <p class="step-subtitle">Tell Sisypho what you want to automate in natural language</p>
+                            </div>
+                            <div class="step-demo">
+                                <!-- GIF 1: Describing task in English -->
+                                <img src="recordInEnglish.gif" alt="Describing task in natural language" class="step-gif">
+                            </div>
+                        </div>
+
+                        <div class="workflow-step">
+                            <div class="step-info">
+                                <h3 class="step-title">02. Record Your Actions</h3>
+                                <p class="step-subtitle">Show Sisypho how to perform the task by recording your screen*. Sisypho will outline what specific actions you have to perform in your recording.</p>
+                                <p class="step-note">*For browser recordings, make sure you have connected the extension to Sisypho</p>
+                            </div>
+                            <div class="step-demo">
+                                <!-- Placeholder for GIF 2: Screen recording -->
+                                <div class="step-screen">
+                                    <div class="demo-placeholder-step">
+                                        <div class="demo-icon-step">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <circle cx="12" cy="12" r="10"/>
+                                                <polygon points="10,8 16,12 10,16"/>
+                                            </svg>
+                                        </div>
+                                        <p class="demo-text-step">Recording workflow</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step">
+                            <div class="step-info">
+                                <h3 class="step-title">03. Test & Validate</h3>
+                                <p class="step-subtitle">Verify the automation works correctly with a test run. For any errors caught during validation run, Sisypho will try to fix the skill it generated by itself.</p>
+                            </div>
+                            <div class="step-demo">
+                                <!-- Placeholder for GIF 3: Test validation -->
+                                <div class="step-screen">
+                                    <div class="demo-placeholder-step">
+                                        <div class="demo-icon-step">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <path d="M9 12l2 2 4-4"/>
+                                                <circle cx="12" cy="12" r="10"/>
+                                            </svg>
+                                        </div>
+                                        <p class="demo-text-step">Validation test</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -305,8 +336,8 @@
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#" onclick="document.querySelector('.cta-button').click(); return false;">Request Demo</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#pricing">Pricing</a>
                     </div>
                     <div class="footer-column">
                         <h4>Company</h4>
