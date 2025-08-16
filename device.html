@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisypho - Device Authorization</title>
+    <link rel="icon" href="../sisypho_logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .code-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .code-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .submit-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .submit-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .success {
+            color: #48bb78;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .error {
+            color: #f56565;
+            font-size: 14px;
+            margin-top: 10px;
+            padding: 10px;
+            background: #fed7d7;
+            border-radius: 8px;
+        }
+        
+        .status-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .message {
+            font-size: 16px;
+            color: #4a5568;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+        
+        .code-display {
+            font-size: 24px;
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+        
+        .help-text {
+            font-size: 14px;
+            color: #a0aec0;
+            margin-top: 20px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">S</div>
+        <h1>Device Authorization</h1>
+        <p class="subtitle">Sign in to your Sisypho desktop app</p>
+        
+        <div id="auth-form">
+            <p class="message">Enter the code displayed in your Sisypho desktop app:</p>
+            
+            <input 
+                type="text" 
+                id="userCode" 
+                class="code-input" 
+                placeholder="ABC-DEF"
+                maxlength="7"
+                autocomplete="off"
+            >
+            
+            <button id="submitBtn" class="submit-btn" onclick="verifyCode()">
+                Continue with Sisypho
+            </button>
+            
+            <div id="errorMsg" style="display: none;"></div>
+            
+            <p class="help-text">
+                Don't have a code? Open the Sisypho desktop app and click "Sign In" to get your authorization code.
+            </p>
+        </div>
+        
+        <div id="success-message" style="display: none;">
+            <div class="status-icon">✅</div>
+            <h2 class="success">Authorization Successful!</h2>
+            <p class="message">You have been successfully signed in to Sisypho.</p>
+            <p class="message"><strong>You can now close this tab</strong> and return to the Sisypho desktop app.</p>
+        </div>
+    </div>
+
+    <!-- Clerk JavaScript SDK -->
+    <script>
+        // Load Clerk SDK
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://js.clerk.dev/v1/clerk.js';
+        script.onload = initializeClerk;
+        document.head.appendChild(script);
+
+        let clerk;
+
+        async function initializeClerk() {
+            try {
+                clerk = new window.Clerk('pk_test_cHJlY2lvdXMtZHJ1bS0xMC5jbGVyay5hY2NvdW50cy5kZXYk');
+                await clerk.load();
+                console.log('Clerk initialized successfully');
+                
+                // Auto-fill code if provided in URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const userCode = urlParams.get('user_code');
+                if (userCode) {
+                    document.getElementById('userCode').value = userCode;
+                }
+                
+            } catch (error) {
+                console.error('Failed to initialize Clerk:', error);
+                showError('Failed to initialize authentication system');
+            }
+        }
+
+        // Format user code input
+        document.getElementById('userCode').addEventListener('input', function(e) {
+            let value = e.target.value.toUpperCase().replace(/[^A-Z]/g, '');
+            if (value.length > 3) {
+                value = value.slice(0, 3) + '-' + value.slice(3, 6);
+            }
+            e.target.value = value;
+        });
+
+        // Handle Enter key
+        document.getElementById('userCode').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verifyCode();
+            }
+        });
+
+        async function verifyCode() {
+            const userCode = document.getElementById('userCode').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+            const errorMsg = document.getElementById('errorMsg');
+            
+            // Validate input
+            if (!userCode || userCode.length < 6) {
+                showError('Please enter a valid 6-character code (e.g., ABC-DEF)');
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="spinner"></div>Verifying...';
+            errorMsg.style.display = 'none';
+            
+            try {
+                // First, sign in with Clerk
+                if (!clerk.user) {
+                    // Redirect to Clerk sign-in if not already signed in
+                    window.location.href = `https://accounts.sisypho.com/sign-in?redirect_url=${encodeURIComponent(window.location.href)}`;
+                    return;
+                }
+                
+                // Get Clerk JWT token
+                const token = await clerk.session.getToken();
+                if (!token) {
+                    throw new Error('No authentication token available');
+                }
+                
+                // Verify the device code with backend
+                const response = await fetch('http://localhost:5000/api/auth/device/verify', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        user_code: userCode,
+                        token: token
+                    })
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.error || `Verification failed (${response.status})`);
+                }
+                
+                const result = await response.json();
+                console.log('Device verification successful:', result);
+                
+                // Show success message
+                document.getElementById('auth-form').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                
+            } catch (error) {
+                console.error('Device verification failed:', error);
+                showError(error.message);
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Continue with Sisypho';
+            }
+        }
+
+        function showError(message) {
+            const errorMsg = document.getElementById('errorMsg');
+            errorMsg.textContent = message;
+            errorMsg.className = 'error';
+            errorMsg.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
