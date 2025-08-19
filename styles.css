@@ -69,6 +69,13 @@ h1, h2, h3, h4 {
     opacity: 0.8;
 }
 
+.logo-image {
+    width: 32px;
+    height: 32px;
+    display: block;
+    flex-shrink: 0;
+}
+
 
 .logo-text {
     font-family: 'DM Sans', sans-serif;
@@ -1391,6 +1398,13 @@ h1, h2, h3, h4 {
     margin-bottom: 20px;
 }
 
+.footer-logo-image {
+    width: 28px;
+    height: 28px;
+    display: block;
+    flex-shrink: 0;
+}
+
 .footer-logo-text {
     font-family: 'DM Sans', sans-serif;
     color: #4f46e5;
@@ -1638,6 +1652,11 @@ h1, h2, h3, h4 {
         font-size: 22px;
     }
     
+    .logo-image {
+        width: 28px;
+        height: 28px;
+    }
+    
     .pricing {
         padding: 60px 0;
     }
@@ -1840,6 +1859,11 @@ h1, h2, h3, h4 {
     
     .footer-logo-text {
         font-size: 20px;
+    }
+    
+    .footer-logo-image {
+        width: 24px;
+        height: 24px;
     }
     
     .footer {
