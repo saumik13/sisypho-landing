@@ -15,7 +15,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
             padding: 32px;
         }
         
@@ -33,7 +33,7 @@
             width: 64px;
             height: 64px;
             margin: 0 auto 24px;
-            background: #ef4444;
+            background: #f59e0b;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -41,11 +41,11 @@
             animation: scaleIn 0.5s ease-out;
         }
         
-        .x-mark {
+        .info-icon {
             width: 32px;
             height: 32px;
             stroke: white;
-            stroke-width: 3;
+            stroke-width: 2;
             fill: none;
         }
         
@@ -67,8 +67,8 @@
         }
         
         .return-message {
-            background: #fef3c7;
-            border: 1px solid #fbbf24;
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 32px;
@@ -77,7 +77,7 @@
         .return-message p {
             font-family: 'DM Sans', sans-serif;
             font-size: 16px;
-            color: #92400e;
+            color: #374151;
             margin: 0;
             font-weight: 500;
         }
@@ -153,18 +153,20 @@
     <div class="cancelled-page">
         <div class="cancelled-card">
             <div class="cancelled-icon">
-                <svg class="x-mark" viewBox="0 0 24 24">
-                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
                 </svg>
             </div>
             
-            <h1 class="cancelled-title">Payment Cancelled</h1>
+            <h1 class="cancelled-title">Subscription Not Completed</h1>
             <p class="cancelled-subtitle">
-                Your subscription payment was cancelled. No charges were made to your account.
+                Your subscription setup was not completed. No charges were made to your account.
             </p>
             
             <div class="return-message">
-                <p>Please return to the Sisypho app to try again or continue using the free tier.</p>
+                <p>You can return to the Sisypho app and try again later, or continue using the free tier. If this issue persists, please reach out to saumik@sisypho.com</p>
             </div>
             
             <a href="https://sisypho.com" class="btn-secondary">
