@@ -4,12 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static landing page for Sisypho, a no-code automation tool. The project consists of a single-page HTML website with:
+This is a static landing page for Sisypho, a no-code automation tool. The project consists of multiple HTML pages with:
 
 - **index.html**: Main landing page with hero section, features, memo section, and CTA
+- **memo.html**: Company memo page with founder story
+- **auth.html**: Authentication/login page
+- **device.html**: Device-specific landing page
+- **payment-success.html** / **payment-cancelled.html**: Payment flow completion pages
 - **styles.css**: Complete styling with modern design, gradients, and responsive layout
 - **script.js**: JavaScript for smooth scrolling, Calendly integration, and scroll animations
-- **sisypho_logo.png**: Company logo image
+- **sisypho_logo.png/svg**: Company logo assets
 
 ## Architecture
 
