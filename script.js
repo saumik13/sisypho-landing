@@ -1,3 +1,24 @@
+// Google Analytics 4 Event Tracking Helper Functions
+function trackGA4Event(eventName, parameters = {}) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', eventName, parameters);
+  }
+}
+
+function trackPageSection(sectionName) {
+  trackGA4Event('page_section_view', {
+    section_name: sectionName,
+    page_title: document.title
+  });
+}
+
+function trackScrollDepth(percentage) {
+  trackGA4Event('scroll_depth', {
+    scroll_percentage: percentage,
+    page_title: document.title
+  });
+}
+
 // Smooth scrolling for navigation links
 document.addEventListener("DOMContentLoaded", function () {
   // Handle all navigation links
@@ -7,6 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       const targetId = this.getAttribute("href");
       const targetElement = document.querySelector(targetId);
+
+      // Track navigation click
+      trackGA4Event('navigation_click', {
+        link_text: this.textContent.trim(),
+        link_url: targetId,
+        page_title: document.title
+      });
 
       if (targetElement) {
         targetElement.scrollIntoView({
@@ -25,6 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (button.classList.contains("pricing-btn")) return;
       if (button.classList.contains("download-macos")) return;
       if (button.classList.contains("download-chrome")) return;
+      
+      // Track demo button click
+      trackGA4Event('demo_request', {
+        button_text: this.textContent.trim(),
+        button_location: 'main_cta',
+        page_title: document.title
+      });
+      
       // Open Calendly link in new tab
       window.open("https://calendly.com/saumik-13/sisypho-demo", "_blank");
     });
@@ -36,12 +72,32 @@ document.addEventListener("DOMContentLoaded", function () {
   if (macBtn) {
     macBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      
+      // Track macOS download as conversion event
+      trackGA4Event('download_app', {
+        platform: 'macos',
+        button_text: macBtn.textContent.trim(),
+        button_location: 'hero_section',
+        value: 1,
+        currency: 'USD'
+      });
+      
       window.open("https://example.com/downloads/sisypho-macos.dmg", "_blank");
     });
   }
   if (chromeBtn) {
     chromeBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      
+      // Track Chrome extension install as conversion event
+      trackGA4Event('install_extension', {
+        platform: 'chrome',
+        button_text: chromeBtn.textContent.trim(),
+        button_location: 'hero_section',
+        value: 1,
+        currency: 'USD'
+      });
+      
       // Replace with your actual Chrome Web Store URL when available
       window.open(
         "https://chromewebstore.google.com/detail/sisypho-extension",
@@ -54,17 +110,40 @@ document.addEventListener("DOMContentLoaded", function () {
   const pricingButtons = document.querySelectorAll(".pricing-btn");
   pricingButtons.forEach((button) => {
     button.addEventListener("click", function (e) {
+      // Find the pricing tier
+      const pricingCard = this.closest('.pricing-card');
+      const tierName = pricingCard ? pricingCard.querySelector('.pricing-tier')?.textContent.trim() : 'unknown';
+      
+      // Track pricing interaction
+      trackGA4Event('pricing_plan_interest', {
+        plan_name: tierName,
+        button_text: this.textContent.trim(),
+        action: 'demo_request',
+        page_title: document.title
+      });
+      
       // Open Calendly link for demo/consultation
       window.open("https://calendly.com/saumik-13/sisypho-demo", "_blank");
     });
   });
 
-  // Add scroll effect to header with modern enhancements
+  // Add scroll effect to header with modern enhancements and scroll tracking
   const header = document.querySelector(".header");
   let lastScrollY = window.scrollY;
+  let scrollDepthTracked = { 25: false, 50: false, 75: false, 90: false };
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = Math.round((currentScrollY / documentHeight) * 100);
+
+    // Track scroll depth milestones
+    Object.keys(scrollDepthTracked).forEach(depth => {
+      if (scrollPercentage >= depth && !scrollDepthTracked[depth]) {
+        scrollDepthTracked[depth] = true;
+        trackScrollDepth(depth);
+      }
+    });
 
     if (currentScrollY > 80) {
       header.style.background = "rgba(255, 255, 255, 0.95)";
@@ -88,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     lastScrollY = currentScrollY;
   });
 
-  // Add intersection observer for fade-in animations
+  // Add intersection observer for fade-in animations and section tracking
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -99,6 +178,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
         entry.target.style.transform = "translateY(0)";
+        
+        // Track section views
+        const sectionClass = entry.target.className.split(' ')[0]; // Get first class name
+        if (sectionClass && !entry.target.dataset.tracked) {
+          trackPageSection(sectionClass);
+          entry.target.dataset.tracked = 'true';
+        }
       }
     });
   }, observerOptions);

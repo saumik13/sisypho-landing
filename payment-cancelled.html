@@ -8,6 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4710XLGH23"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4710XLGH23');
+    </script>
+    
     <style>
         body {
             margin: 0;
@@ -361,5 +372,31 @@
             <p>&copy; 2025 Sisypho. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+        // Track payment cancellation
+        if (typeof gtag !== 'undefined') {
+            // Track payment abandonment
+            gtag('event', 'payment_cancelled', {
+                event_category: 'ecommerce',
+                event_label: 'subscription_abandon',
+                page_type: 'checkout_abandon'
+            });
+            
+            // Track as a checkout step for funnel analysis
+            gtag('event', 'begin_checkout', {
+                currency: 'USD',
+                value: 30.00,
+                checkout_step: 'cancelled'
+            });
+            
+            // Track page view with specific page type
+            gtag('event', 'page_view', {
+                page_title: 'Payment Cancelled',
+                page_type: 'checkout_abandon',
+                conversion_type: 'subscription'
+            });
+        }
+    </script>
 </body>
 </html>
