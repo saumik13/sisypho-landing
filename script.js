@@ -113,17 +113,48 @@ document.addEventListener("DOMContentLoaded", function () {
       // Find the pricing tier
       const pricingCard = this.closest('.pricing-card');
       const tierName = pricingCard ? pricingCard.querySelector('.pricing-tier')?.textContent.trim() : 'unknown';
+      const buttonText = this.textContent.trim();
       
-      // Track pricing interaction
-      trackGA4Event('pricing_plan_interest', {
-        plan_name: tierName,
-        button_text: this.textContent.trim(),
-        action: 'demo_request',
-        page_title: document.title
-      });
-      
-      // Open Calendly link for demo/consultation
-      window.open("https://calendly.com/saumik-13/sisypho-demo", "_blank");
+      // Check if this is a Mac download button
+      if (buttonText === 'Download' && this.querySelector('img[alt="Apple"]')) {
+        // Track Mac download from pricing section
+        trackGA4Event('download_app', {
+          platform: 'macos',
+          button_text: buttonText,
+          button_location: 'pricing_section',
+          plan_name: tierName,
+          value: 1,
+          currency: 'USD'
+        });
+        
+        window.open("https://dkv5nxmgshtq3.cloudfront.net/Sisypho-1.0.0-arm64.dmg", "_blank");
+      } 
+      // Check if this is a Chrome extension button
+      else if (buttonText === 'Install Extension') {
+        // Track Chrome extension from pricing section
+        trackGA4Event('install_extension', {
+          platform: 'chrome',
+          button_text: buttonText,
+          button_location: 'pricing_section',
+          plan_name: tierName,
+          value: 1,
+          currency: 'USD'
+        });
+        
+        window.open("https://chromewebstore.google.com/detail/sisypho-extension", "_blank");
+      }
+      // Default to Calendly for other buttons
+      else {
+        // Track pricing interaction
+        trackGA4Event('pricing_plan_interest', {
+          plan_name: tierName,
+          button_text: buttonText,
+          action: 'demo_request',
+          page_title: document.title
+        });
+        
+        window.open("https://calendly.com/saumik-13/sisypho-demo", "_blank");
+      }
     });
   });
 
