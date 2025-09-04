@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currency: 'USD'
       });
       
-      window.open("https://example.com/downloads/sisypho-macos.dmg", "_blank");
+      window.open("https://dkv5nxmgshtq3.cloudfront.net/Sisypho-1.0.0-arm64.dmg", "_blank");
     });
   }
   if (chromeBtn) {
