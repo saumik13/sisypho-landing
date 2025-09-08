@@ -98,9 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
         currency: 'USD'
       });
       
-      // Replace with your actual Chrome Web Store URL when available
       window.open(
-        "https://chromewebstore.google.com/detail/sisypho-extension",
+        "https://chromewebstore.google.com/detail/sisypho-chrome-ext/bllfdccnpfjfdofbepfncfdhbjjcjfcm?authuser=0&hl=en",
         "_blank"
       );
     });
@@ -141,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
           currency: 'USD'
         });
         
-        window.open("https://chromewebstore.google.com/detail/sisypho-extension", "_blank");
+        window.open("https://chromewebstore.google.com/detail/sisypho-chrome-ext/bllfdccnpfjfdofbepfncfdhbjjcjfcm?authuser=0&hl=en", "_blank");
       }
       // Default to Calendly for other buttons
       else {
