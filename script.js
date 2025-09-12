@@ -251,4 +251,91 @@ document.addEventListener("DOMContentLoaded", function () {
     }s, transform 0.6s ease ${index * 0.15}s`;
     observer.observe(card);
   });
+
+  // Waitlist form handling
+  const waitlistForm = document.getElementById('waitlistForm');
+  if (waitlistForm) {
+    waitlistForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const formStatus = document.getElementById('formStatus');
+      const emailInput = document.getElementById('email');
+      const btnText = submitBtn.querySelector('.btn-text');
+      
+      // Show loading state
+      submitBtn.classList.add('loading');
+      btnText.textContent = 'Joining...';
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+      
+      try {
+        // Submit to Formspree
+        const formData = new FormData(waitlistForm);
+        const response = await fetch(waitlistForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Success
+          formStatus.textContent = '🎉 You\'re in! We\'ll send your beta access soon.';
+          formStatus.className = 'form-status success';
+          emailInput.value = '';
+          
+          // Track successful waitlist signup
+          trackGA4Event('beta_signup', {
+            email_domain: emailInput.value.split('@')[1] || 'unknown',
+            signup_location: 'hero_waitlist',
+            value: 1,
+            currency: 'USD'
+          });
+          
+          // Reset button after delay
+          setTimeout(() => {
+            btnText.textContent = 'Join Beta Waitlist';
+            submitBtn.classList.remove('loading');
+          }, 2000);
+          
+        } else {
+          throw new Error('Submission failed');
+        }
+        
+      } catch (error) {
+        console.error('Form submission error:', error);
+        formStatus.textContent = 'Something went wrong. Please try again.';
+        formStatus.className = 'form-status error';
+        btnText.textContent = 'Join Beta Waitlist';
+        submitBtn.classList.remove('loading');
+      }
+    });
+  }
 });
+
+// Scroll to waitlist function for pricing buttons
+function scrollToWaitlist() {
+  const waitlistSection = document.querySelector('.waitlist-section');
+  if (waitlistSection) {
+    waitlistSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+    
+    // Track pricing to waitlist conversion
+    trackGA4Event('pricing_to_waitlist', {
+      action: 'scroll_to_waitlist',
+      page_title: document.title
+    });
+    
+    // Focus the email input after scroll
+    setTimeout(() => {
+      const emailInput = document.getElementById('email');
+      if (emailInput) {
+        emailInput.focus();
+      }
+    }, 1000);
+  }
+}

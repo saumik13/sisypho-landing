@@ -1921,3 +1921,317 @@ h1, h2, h3, h4 {
     /* Ensure icon stays on the first line next to the first text line */
     .cta-note { display: block; text-align: center; }
 }
+
+/* Waitlist Styles */
+.waitlist-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.waitlist-container {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.waitlist-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.beta-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #4f46e5;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.waitlist-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.2;
+}
+
+.waitlist-subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.5;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+.waitlist-form {
+    margin-bottom: 0;
+}
+
+.form-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.form-input {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #111827;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: rgba(107, 114, 128, 0.6);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.btn-waitlist {
+    background: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    min-width: 140px;
+    justify-content: center;
+}
+
+.btn-waitlist:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-waitlist:active {
+    transform: translateY(0);
+}
+
+.btn-waitlist.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-waitlist .btn-icon {
+    transition: transform 0.2s ease;
+}
+
+.btn-waitlist:hover .btn-icon {
+    transform: translateX(2px);
+}
+
+.form-status {
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.form-status.success {
+    color: #059669;
+}
+
+.form-status.error {
+    color: #dc2626;
+}
+
+
+/* Beta Pricing Styles */
+.beta-pricing-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 25px;
+    margin-bottom: 24px;
+    animation: pulse 2s infinite;
+    letter-spacing: 0.5px;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.pricing-urgency {
+    color: #f59e0b;
+    font-weight: 600;
+    margin-top: 12px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.plan-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.beta-access-badge {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.savings-badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    margin-right: 8px;
+}
+
+.popular-badge {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+}
+
+.price-strike {
+    font-size: 18px;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-bottom: 8px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.price-current {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.price-guarantee {
+    color: #10b981;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 8px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.pricing-waitlist-btn {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.pricing-waitlist-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+}
+
+.waitlist-note {
+    color: #6b7280;
+    font-size: 13px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .waitlist-container {
+        padding: 28px 24px;
+        margin: 0 16px;
+        max-width: 400px;
+    }
+    
+    .waitlist-title {
+        font-size: 24px;
+    }
+    
+    .waitlist-subtitle {
+        font-size: 15px;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn-waitlist {
+        width: 100%;
+        min-width: unset;
+        padding: 16px 20px;
+    }
+    
+    .form-input {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .waitlist-container {
+        padding: 24px 20px;
+        border-radius: 12px;
+        margin: 0 12px;
+    }
+    
+    .waitlist-title {
+        font-size: 22px;
+    }
+    
+    .waitlist-subtitle {
+        font-size: 14px;
+    }
+    
+    .form-input {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+    
+    .btn-waitlist {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+}
