@@ -20,6 +20,24 @@
 
       gtag('config', 'G-4710XLGH23');
     </script>
+    
+    <!-- Google Ads Conversion Tracking for Waitlist Signups -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17548740340/QQW8CMnF9pgbEPSN8q9B',
+          'value': 1.0,
+          'currency': 'CAD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -158,8 +176,8 @@
                 <div class="pricing-header">
                     <div class="beta-pricing-badge">🎆 BETA PRICING - LIMITED TIME</div>
                     <h2 class="section-title">Early Access Pricing</h2>
-                    <p class="pricing-subtitle">Lock in exclusive beta pricing forever - available only for our first 100 users</p>
-                    <p class="pricing-urgency">Beta pricing ends January 31st • Only accepting 100 beta users</p>
+                    <p class="pricing-subtitle">Lock in exclusive beta pricing for early adopters</p>
+                    <p class="pricing-urgency">Beta pricing ends October 1st</p>
                 </div>
                 
                 <div class="pricing-grid">

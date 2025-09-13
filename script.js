@@ -294,6 +294,11 @@ document.addEventListener("DOMContentLoaded", function () {
             currency: 'USD'
           });
           
+          // Track Google Ads conversion for waitlist signup
+          if (typeof gtag_report_conversion === 'function') {
+            gtag_report_conversion();
+          }
+          
           // Reset button after delay
           setTimeout(() => {
             btnText.textContent = 'Join Beta Waitlist';
