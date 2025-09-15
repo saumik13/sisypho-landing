@@ -66,8 +66,6 @@
                         Replace manual scripts, RPA tools, and repetitive desktop work with intelligent automation. 
                         Just show Sisypho what you do once, describe it in natural language and it handles the rest forever.
                     </p>
-                    <!-- COMMENTED OUT: Original download links - can be re-enabled later -->
-                    <!--
                     <div class="hero-cta hero-actions">
                         <a href="#" class="btn-hero btn-hero-primary download-macos" aria-label="Download Sisypho for macOS">
                             <img src="apple_logo_black.svg" alt="Apple" class="icon icon-apple" style="margin-right:8px" />
@@ -91,10 +89,9 @@
                         </a>
                         <p class="cta-note">*macOS app only. Chrome extension required to automate browser actions.</p>
                     </div>
-                    -->
                     
-                    <!-- NEW: Clean waitlist signup form -->
-                    <div class="hero-cta waitlist-section">
+                    <!-- HIDDEN: Waitlist signup form -->
+                    <div class="hero-cta waitlist-section" style="display: none;">
                         <div class="waitlist-container">
                             <div class="waitlist-header">
                                 <div class="beta-badge">EARLY ACCESS</div>
@@ -174,16 +171,22 @@
         <section class="pricing" id="pricing">
             <div class="container">
                 <div class="pricing-header">
+                    <!-- COMMENTED OUT: Beta pricing messaging -->
+                    <!--
                     <div class="beta-pricing-badge">🎆 BETA PRICING - LIMITED TIME</div>
                     <h2 class="section-title">Early Access Pricing</h2>
                     <p class="pricing-subtitle">Lock in exclusive beta pricing for early adopters</p>
                     <p class="pricing-urgency">Beta pricing ends October 1st</p>
+                    -->
+                    <h2 class="section-title">Pricing</h2>
+                    <p class="pricing-subtitle">Choose the plan that fits your automation needs</p>
                 </div>
                 
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <div class="pricing-card-header">
-                            <div class="plan-badge beta-access-badge">BETA ACCESS</div>
+                            <!-- COMMENTED OUT: Beta access badge -->
+                            <!-- <div class="plan-badge beta-access-badge">BETA ACCESS</div> -->
                             <h3 class="pricing-tier">Free</h3>
                             <div class="pricing-price">
                                 <span class="price-currency">$</span>
@@ -210,8 +213,6 @@
                             </ul>
                         </div>
                         
-                        <!-- COMMENTED OUT: Original download buttons in Free tier -->
-                        <!--
                         <div class="pricing-cta">
                             <button class="btn btn-secondary pricing-btn">
                                 <img src="apple_logo_black.svg" alt="Apple" class="btn-icon" />
@@ -234,13 +235,15 @@
                                 Install Extension
                             </button>
                         </div>
-                        -->
+                        <!-- COMMENTED OUT: Waitlist buttons for Free tier -->
+                        <!--
                         <div class="pricing-cta">
                             <button class="btn btn-primary pricing-waitlist-btn" onclick="scrollToWaitlist()">
                                 Join Beta Waitlist
                             </button>
                             <p class="waitlist-note">Get beta pricing as an early adopter</p>
                         </div>
+                        -->
                     </div>
                     
                     <div class="pricing-card">
@@ -275,11 +278,17 @@
                             </ul>
                         </div>
                         
+                        <!-- COMMENTED OUT: Waitlist buttons for Basic tier -->
+                        <!--
                         <div class="pricing-cta">
                             <button class="btn btn-primary pricing-waitlist-btn" onclick="scrollToWaitlist()">
                                 Join Beta Waitlist
                             </button>
                             <p class="waitlist-note">Get early access with beta pricing</p>
+                        </div>
+                        -->
+                        <div class="pricing-cta">
+                            <p class="upgrade-note">All upgrades done through app</p>
                         </div>
                     </div>
                     
@@ -315,11 +324,17 @@
                             </ul>
                         </div>
                         
+                        <!-- COMMENTED OUT: Waitlist buttons for Pro tier -->
+                        <!--
                         <div class="pricing-cta">
                             <button class="btn btn-primary pricing-waitlist-btn" onclick="scrollToWaitlist()">
                                 Join Beta Waitlist
                             </button>
                             <p class="waitlist-note">Get early access with beta pricing</p>
+                        </div>
+                        -->
+                        <div class="pricing-cta">
+                            <p class="upgrade-note">All upgrades done through app</p>
                         </div>
                     </div>
                 </div>
