@@ -66,7 +66,8 @@
                         Replace manual scripts, RPA tools, and repetitive desktop work with intelligent automation. 
                         Just show Sisypho what you do once, describe it in natural language and it handles the rest forever.
                     </p>
-                    <div class="hero-cta hero-actions">
+                    <!-- HIDDEN: Download links -->
+                    <div class="hero-cta hero-actions" style="display: none;">
                         <a href="#" class="btn-hero btn-hero-primary download-macos" aria-label="Download Sisypho for macOS">
                             <img src="apple_logo_black.svg" alt="Apple" class="icon icon-apple" style="margin-right:8px" />
                             <span>Download for macOS</span>
@@ -90,8 +91,8 @@
                         <p class="cta-note">*macOS app only. Chrome extension required to automate browser actions.</p>
                     </div>
                     
-                    <!-- HIDDEN: Waitlist signup form -->
-                    <div class="hero-cta waitlist-section" style="display: none;">
+                    <!-- Waitlist signup form -->
+                    <div class="hero-cta waitlist-section">
                         <div class="waitlist-container">
                             <div class="waitlist-header">
                                 <div class="beta-badge">EARLY ACCESS</div>
@@ -213,7 +214,8 @@
                             </ul>
                         </div>
                         
-                        <div class="pricing-cta">
+                        <!-- HIDDEN: Download buttons -->
+                        <div class="pricing-cta" style="display: none;">
                             <button class="btn btn-secondary pricing-btn">
                                 <img src="apple_logo_black.svg" alt="Apple" class="btn-icon" />
                                 Download
@@ -234,6 +236,12 @@
                                 </svg>
                                 Install Extension
                             </button>
+                        </div>
+                        <div class="pricing-cta">
+                            <button class="btn btn-primary pricing-waitlist-btn" onclick="scrollToWaitlist()">
+                                Join Beta Waitlist
+                            </button>
+                            <p class="waitlist-note">Get beta pricing as an early adopter</p>
                         </div>
                         <!-- COMMENTED OUT: Waitlist buttons for Free tier -->
                         <!--
