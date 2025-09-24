@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (response.ok) {
           // Success
-          formStatus.textContent = '🎉 You\'re in! We\'ll send your beta access soon.';
+          formStatus.textContent = '🎉 Thanks for your interest! We\'ll reach out to schedule a demo. Questions? Contact founders@sisypho.com';
           formStatus.className = 'form-status success';
           emailInput.value = '';
           
