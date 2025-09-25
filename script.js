@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
       // Show loading state
       submitBtn.classList.add('loading');
-      btnText.textContent = 'Joining...';
+      btnText.textContent = 'Requesting...';
       formStatus.textContent = '';
       formStatus.className = 'form-status';
       
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
           
           // Reset button after delay
           setTimeout(() => {
-            btnText.textContent = 'Join Beta Waitlist';
+            btnText.textContent = 'Request Demo';
             submitBtn.classList.remove('loading');
           }, 2000);
           
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error('Form submission error:', error);
         formStatus.textContent = 'Something went wrong. Please try again.';
         formStatus.className = 'form-status error';
-        btnText.textContent = 'Join Beta Waitlist';
+        btnText.textContent = 'Request Demo';
         submitBtn.classList.remove('loading');
       }
     });
