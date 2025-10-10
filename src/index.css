@@ -1902,7 +1902,7 @@ h1, h2, h3, h4 {
     .hero .container { grid-template-columns: 1fr; gap: 24px; text-align: center; }
     .gradient-hero .container { 
         justify-items: center; 
-        padding-bottom: 280px;
+        padding-bottom: 340px;
         min-height: calc(100vh - 100px);
     }
     
@@ -2114,7 +2114,7 @@ h1, h2, h3, h4 {
     }
     
     .gradient-hero .container {
-        padding-bottom: 240px;
+        padding-bottom: 320px;
         min-height: calc(100vh - 80px);
     }
     
