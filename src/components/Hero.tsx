@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useWaitlistForm } from '../hooks/useWaitlistForm'
+import TeamCredibility from './TeamCredibility'
 
 const Hero: React.FC = () => {
+  const [isFormExpanded, setIsFormExpanded] = useState(false)
   useWaitlistForm()
+
+  const handleBookDemoClick = () => {
+    setIsFormExpanded(true)
+  }
+
   return (
     <section className="hero gradient-hero">
       <div className="container">
@@ -11,9 +18,10 @@ const Hero: React.FC = () => {
             Automate Repetitive <span className="gradient-text">Clinical Workflows</span>
           </h1>
           <p className="hero-subtitle">
-            Perfect for businesses in accounting, insurance, recruiting, healthcare admin, and logistics.<br />
-            <strong>Save 10+ hours per week</strong> on invoice processing, claims management, candidate screening, patient records, and data entry.
+            Securely automate your own healthcare admin tasks, repetitive retrospective studies, and health record management workflows.<br />
+            <strong>Save 10+ hours per week</strong> on patient result transmission, scheduling new visits, claims processing, and EHR updates.
           </p>
+          {/*
           <div className="hero-benefits">
             <div className="benefit-item">
               <svg className="benefit-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
@@ -34,28 +42,43 @@ const Hero: React.FC = () => {
               <span>Automate candidate screening and logistics workflows</span>
             </div>
           </div>
+          */}
 
-          {/* Waitlist signup form */}
-          <div className="hero-cta waitlist-section">
-            <div className="waitlist-container">
-              <div className="waitlist-header">
-                <div className="beta-badge">AVAILABLE NOW</div>
-                <h3 className="waitlist-title">Join Businesses Automating Workflows</h3>
+          {/* Standalone Book Demo button */}
+          <div className="hero-cta">
+            {!isFormExpanded ? (
+              <button
+                className="btn-book-demo"
+                onClick={handleBookDemoClick}
+                id="bookDemoBtn"
+              >
+                <span className="btn-text">Book Demo</span>
+                <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            ) : (
+              <div className="demo-form-container">
+                <form className="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xeoldkgp" method="POST">
+                  <div className="form-group">
+                    <input type="email" id="email" name="email" className="form-input" placeholder="Enter your company email address" required />
+                    <button type="submit" className="btn-waitlist" id="submitBtn">
+                      <span className="btn-text">Confirm</span>
+                      <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div className="form-status" id="formStatus"></div>
+                </form>
               </div>
-              <form className="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xeoldkgp" method="POST">
-                <div className="form-group">
-                  <input type="email" id="email" name="email" className="form-input" placeholder="Enter your company email address" required />
-                  <button type="submit" className="btn-waitlist" id="submitBtn">
-                    <span className="btn-text">Request Demo</span>
-                    <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="m9 18 6-6-6-6" />
-                    </svg>
-                  </button>
-                </div>
-                <div className="form-status" id="formStatus"></div>
-              </form>
-            </div>
+            )}
           </div>
+        </div>
+        
+        {/* Team Credibility Section */}
+        <div className="hero-credibility">
+          <TeamCredibility />
         </div>
       </div>
     </section>

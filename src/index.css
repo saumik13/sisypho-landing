@@ -230,7 +230,7 @@ h1, h2, h3, h4 {
 
 /* Hero Section */
 .hero {
-    padding: 120px 0 100px;
+    padding: 120px 0 0;
     background: 
         radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 114, 94, 0.15) 0%, transparent 50%),
@@ -238,7 +238,7 @@ h1, h2, h3, h4 {
         linear-gradient(135deg, #ffffff 0%, #fafbff 100%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     overflow: visible;
 }
@@ -278,6 +278,12 @@ h1, h2, h3, h4 {
     text-align: center;
     gap: 28px;
     padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 120px);
+    padding-bottom: 180px;
+    position: relative;
 }
 
 .gradient-hero .hero-content {
@@ -326,6 +332,87 @@ h1, h2, h3, h4 {
     flex-wrap: wrap;
     gap: 14px;
     width: 100%;
+}
+
+/* Hero Credibility Section */
+.hero-credibility {
+    padding: 40px 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(226, 232, 240, 0.5);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.hero-credibility .credibility-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-credibility .credibility-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.hero-credibility .credibility-subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.hero-credibility .company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.hero-credibility .company-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(60%);
+    transition: all 0.3s ease;
+}
+
+.hero-credibility .company-logo:hover {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .hero-credibility {
+        padding: 32px 0;
+    }
+    
+    .hero-credibility .credibility-title {
+        font-size: 20px;
+    }
+    
+    .hero-credibility .credibility-subtitle {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+    
+    .hero-credibility .company-logos {
+        gap: 20px;
+    }
+    
+    .hero-credibility .company-logo {
+        height: 28px;
+    }
 }
 
 /* Modern hero buttons */
@@ -2068,20 +2155,6 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-.waitlist-container {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 24px;
-    padding: 40px;
-    max-width: 520px;
-    width: 100%;
-    box-shadow: 
-        0 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0 10px 10px -5px rgba(0, 0, 0, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    position: relative;
-}
 
 .waitlist-header {
     text-align: center;
@@ -2202,6 +2275,61 @@ h1, h2, h3, h4 {
 
 .btn-waitlist:hover .btn-icon {
     transform: translateX(2px);
+}
+
+.btn-book-demo {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    margin: 0 auto;
+}
+
+.btn-book-demo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    filter: brightness(1.05);
+}
+
+.btn-book-demo:active {
+    transform: translateY(0);
+}
+
+.btn-book-demo .btn-icon {
+    transition: transform 0.2s ease;
+}
+
+.btn-book-demo:hover .btn-icon {
+    transform: translateX(2px);
+}
+
+.demo-form-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    position: relative;
+    margin: 0 auto;
+    transition: all 0.3s ease;
 }
 
 .form-status {
@@ -2348,12 +2476,6 @@ h1, h2, h3, h4 {
     }
     
     
-    /* Waitlist Mobile */
-    .waitlist-container {
-        padding: 28px 24px;
-        margin: 0 auto;
-        max-width: 400px;
-    }
     
     .waitlist-title {
         font-size: 24px;
@@ -2374,18 +2496,24 @@ h1, h2, h3, h4 {
         padding: 16px 20px;
     }
     
+    .btn-book-demo {
+        width: 100%;
+        min-width: unset;
+        padding: 16px 20px;
+    }
+    
+    .demo-form-container {
+        padding: 28px 24px;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    
     .form-input {
         padding: 16px;
     }
 }
 
 @media (max-width: 480px) {
-    .waitlist-container {
-        padding: 24px 20px;
-        border-radius: 12px;
-        margin: 0 auto;
-        max-width: calc(100% - 24px);
-    }
     
     .waitlist-title {
         font-size: 22px;
@@ -2403,5 +2531,17 @@ h1, h2, h3, h4 {
     .btn-waitlist {
         padding: 14px 20px;
         font-size: 15px;
+    }
+    
+    .btn-book-demo {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+    
+    .demo-form-container {
+        padding: 24px 20px;
+        border-radius: 12px;
+        margin: 0 auto;
+        max-width: calc(100% - 24px);
     }
 }

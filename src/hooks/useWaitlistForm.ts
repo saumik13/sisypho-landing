@@ -18,7 +18,7 @@ export const useWaitlistForm = () => {
       
       // Show loading state
       submitBtn.classList.add('loading')
-      btnText.textContent = 'Requesting...'
+      btnText.textContent = 'Confirming...'
       formStatus.textContent = ''
       formStatus.className = 'form-status'
       
@@ -54,7 +54,7 @@ export const useWaitlistForm = () => {
           
           // Reset button after delay
           setTimeout(() => {
-            btnText.textContent = 'Request Demo'
+            btnText.textContent = 'Confirm'
             submitBtn.classList.remove('loading')
           }, 2000)
           
@@ -66,7 +66,7 @@ export const useWaitlistForm = () => {
         console.error('Form submission error:', error)
         formStatus.textContent = 'Something went wrong. Please try again.'
         formStatus.className = 'form-status error'
-        btnText.textContent = 'Request Demo'
+        btnText.textContent = 'Confirm'
         submitBtn.classList.remove('loading')
       }
     }
