@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
               <div className="demo-form-container">
                 <form className="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xeoldkgp" method="POST">
                   <div className="form-group">
-                    <input type="email" id="email" name="email" className="form-input" placeholder="Enter your company email address" required />
+                    <input type="email" id="email" name="email" className="form-input" placeholder="Enter your email address" required />
                     <button type="submit" className="btn-waitlist" id="submitBtn">
                       <span className="btn-text">Confirm</span>
                       <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
