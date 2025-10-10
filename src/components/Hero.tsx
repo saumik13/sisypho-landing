@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
                 onClick={handleBookDemoClick}
                 id="bookDemoBtn"
               >
-                <span className="btn-text">Book Demo</span>
+                <span className="btn-text">Request Demo</span>
                 <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="m9 18 6-6-6-6" />
                 </svg>

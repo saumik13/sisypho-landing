@@ -3,11 +3,17 @@ import { trackGA4Event } from './useAnalytics'
 
 export const useWaitlistForm = () => {
   useEffect(() => {
-    const waitlistForm = document.getElementById('waitlistForm')
-    if (!waitlistForm) return
+    const setupFormListener = () => {
+      const waitlistForm = document.getElementById('waitlistForm')
+      if (!waitlistForm) {
+        // If form doesn't exist yet, try again in a bit
+        setTimeout(setupFormListener, 100)
+        return
+      }
 
-    const handleSubmit = async (e: Event) => {
-      e.preventDefault()
+      const handleSubmit = async (e: Event) => {
+        e.preventDefault()
+        e.stopPropagation()
       
       const submitBtn = document.getElementById('submitBtn')
       const formStatus = document.getElementById('formStatus')
@@ -71,10 +77,13 @@ export const useWaitlistForm = () => {
       }
     }
 
-    waitlistForm.addEventListener('submit', handleSubmit)
+      waitlistForm.addEventListener('submit', handleSubmit)
 
-    return () => {
-      waitlistForm.removeEventListener('submit', handleSubmit)
+      return () => {
+        waitlistForm.removeEventListener('submit', handleSubmit)
+      }
     }
+
+    setupFormListener()
   }, [])
 }

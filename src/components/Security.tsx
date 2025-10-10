@@ -5,9 +5,9 @@ const Security: React.FC = () => {
     <section id="security" className="security">
       <div className="container">
         <div className="security-content">
-          <h2 className="security-title">Security First Design</h2>
+          <h2 className="security-title">Enterprise-Grade Security & Privacy Protection</h2>
           <p className="security-description">
-            Sisypho is built with privacy and security at its core. All workflows run locally, and any personally identifiable information (PII) is automatically removed or anonymized before processing. Our team is actively working toward full compliance readiness, including HIPAA certification, to ensure the highest standards of data protection for healthcare organizations.
+            Built for healthcare organizations with the highest security standards. Sisypho processes all workflows locally on your infrastructure—no patient data ever leaves your environment. Our zero-data-retention architecture automatically strips and anonymizes any PII before processing, ensuring complete data isolation. We're actively pursuing HIPAA compliance certification to meet enterprise healthcare requirements, with robust audit trails and access controls designed for clinical environments.
           </p>
         </div>
       </div>

@@ -282,7 +282,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     justify-content: center;
     min-height: calc(100vh - 120px);
-    padding-bottom: 180px;
+    padding-bottom: 320px;
     position: relative;
 }
 
@@ -336,7 +336,7 @@ h1, h2, h3, h4 {
 
 /* Hero Credibility Section */
 .hero-credibility {
-    padding: 40px 0;
+    padding: 48px 0 48px;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(226, 232, 240, 0.5);
@@ -394,7 +394,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
     .hero-credibility {
-        padding: 32px 0;
+        padding: 36px 0 36px;
     }
     
     .hero-credibility .credibility-title {
@@ -1449,7 +1449,11 @@ h1, h2, h3, h4 {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero .container { grid-template-columns: 1fr; gap: 24px; text-align: center; }
-    .gradient-hero .container { justify-items: center; }
+    .gradient-hero .container { 
+        justify-items: center; 
+        padding-bottom: 280px;
+        min-height: calc(100vh - 100px);
+    }
     
     .hero-cta { align-items: center; }
     .gradient-hero .hero-cta { 
@@ -1656,6 +1660,11 @@ h1, h2, h3, h4 {
     
     .hero {
         padding: 100px 0 60px;
+    }
+    
+    .gradient-hero .container {
+        padding-bottom: 240px;
+        min-height: calc(100vh - 80px);
     }
     
     .hero-title {
