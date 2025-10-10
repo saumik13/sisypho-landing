@@ -13,7 +13,7 @@ const HowItWorks: React.FC = () => {
           <div className="workflow-steps">
             <div className="workflow-step">
               <div className="step-info">
-                <div className="step-time-badge">30 seconds</div>
+                <div className="step-time-badge">3 minutes</div>
                 <h3 className="step-title">01. Show and Tell</h3>
                 <p className="step-subtitle">Describe your task in plain English. Like talking to a colleague.</p>
                 <p className="step-example">Example: "Send out test results to patients who have not received them yet, along with any attached referral doctors as well."</p>
@@ -22,7 +22,7 @@ const HowItWorks: React.FC = () => {
 
             <div className="workflow-step">
               <div className="step-info">
-                <div className="step-time-badge">2 minutes</div>
+                <div className="step-time-badge">1 minute</div>
                 <h3 className="step-title">02. Validate</h3>
                 <p className="step-subtitle">Work with Sisypho as it validates your workflow, to ensure it performs as you expect.</p>
                 <p className="step-example">Sisypho will go through your workflow step by step, checking with you along the way.</p>
