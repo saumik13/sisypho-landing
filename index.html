@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sisypho - Intelligent Automation for Everyone</title>
-    <link rel="icon" type="image/svg+xml" href="/sisypho_logo.svg">
-    <link rel="icon" type="image/png" href="/sisypho_logo.png">
+    <link rel="icon" type="image/svg+xml" href="sisypho_logo.svg">
+    <link rel="icon" type="image/png" href="sisypho_logo.png">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
@@ -39,7 +40,334 @@
     </script>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="#" class="logo-link">
+                    <img src="sisypho_logo.svg" alt="Sisypho" class="logo-image">
+                    <span class="logo-text">Sisypho</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#use-cases" class="nav-link">Use Cases</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero gradient-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Automate CRM Updates, ERP Data Entry & <span class="gradient-text">Repetitive Workflows</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Perfect for businesses in accounting, insurance, recruiting, healthcare admin, and logistics.<br>
+                        <strong>Save 10+ hours per week</strong> on invoice processing, claims management, candidate screening, patient records, and data entry.
+                    </p>
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <svg class="benefit-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Sync data between CRM, ERP, and accounting systems</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg class="benefit-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Process insurance claims and patient records automatically</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg class="benefit-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Automate candidate screening and logistics workflows</span>
+                        </div>
+                    </div>
+                    <!-- HIDDEN: Download links -->
+                    <div class="hero-cta hero-actions" style="display: none;">
+                        <a href="#" class="btn-hero btn-hero-primary download-macos" aria-label="Download Sisypho for macOS">
+                            <img src="apple_logo_black.svg" alt="Apple" class="icon icon-apple" style="margin-right:8px" />
+                            <span>Download for macOS</span>
+                        </a>
+                        <a href="#" class="btn-hero btn-hero-secondary download-chrome" aria-label="Install Sisypho Chrome Extension">
+                            <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin-right:8px">
+                                <defs>
+                                    <linearGradient id="a" x1="3.2173" y1="15" x2="44.7812" y2="15" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#d93025"/><stop offset="1" stop-color="#ea4335"/></linearGradient>
+                                    <linearGradient id="b" x1="20.7219" y1="47.6791" x2="41.5039" y2="11.6837" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fcc934"/><stop offset="1" stop-color="#fbbc04"/></linearGradient>
+                                    <linearGradient id="c" x1="26.5981" y1="46.5015" x2="5.8161" y2="10.506" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1e8e3e"/><stop offset="1" stop-color="#34a853"/></linearGradient>
+                                </defs>
+                                <circle cx="24" cy="23.9947" r="12" fill="#fff"/>
+                                <path d="M3.2154,36A24,24,0,1,0,12,3.2154,24,24,0,0,0,3.2154,36ZM34.3923,18A12,12,0,1,1,18,13.6077,12,12,0,0,1,34.3923,18Z" fill="none"/>
+                                <path d="M24,12H44.7812a23.9939,23.9939,0,0,0-41.5639.0029L13.6079,30l.0093-.0024A11.9852,11.9852,0,0,1,24,12Z" fill="url(#a)"/>
+                                <circle cx="24" cy="24" r="9.5" fill="#1a73e8"/>
+                                <path d="M34.3913,30.0029,24.0007,48A23.994,23.994,0,0,0,44.78,12.0031H23.9989l-.0025.0093A11.985,11.985,0,0,1,34.3913,30.0029Z" fill="url(#b)"/>
+                                <path d="M13.6086,30.0031,3.218,12.006A23.994,23.994,0,0,0,24.0025,48L34.3931,30.0029l-.0067-.0068a11.9852,11.9852,0,0,1-20.7778.007Z" fill="url(#c)"/>
+                            </svg>
+                            <span>Install Chrome Extension</span>
+                        </a>
+                        <p class="cta-note">*macOS app only. Chrome extension required to automate browser actions.</p>
+                    </div>
+                    
+                    <!-- Waitlist signup form -->
+                    <div class="hero-cta waitlist-section">
+                        <div class="waitlist-container">
+                            <div class="waitlist-header">
+                                <div class="beta-badge">AVAILABLE NOW</div>
+                                <h3 class="waitlist-title">Join Businesses Automating Workflows</h3>
+                            </div>
+                            <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xeoldkgp" method="POST">
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your company email address" required>
+                                    <button type="submit" class="btn-waitlist" id="submitBtn">
+                                        <span class="btn-text">Request Demo</span>
+                                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m9 18 6-6-6-6"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="form-status" id="formStatus"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-credibility">
+            <div class="container">
+                <div class="credibility-content">
+                    <div class="credibility-text">
+                        <h2 class="credibility-title">Built by Engineers from Leading Tech Companies</h2>
+                        <p class="credibility-subtitle">Our team brings automation expertise from world-class organizations</p>
+                    </div>
+                    <div class="company-logos">
+                        <img src="assets/brands/snap.svg" alt="Snap" class="company-logo">
+                        <img src="assets/brands/meta.svg" alt="Meta" class="company-logo">
+                        <img src="assets/brands/instacart.svg" alt="Instacart" class="company-logo">
+                        <img src="assets/brands/parallel.svg" alt="Parallel Systems" class="company-logo">
+                        <img src="assets/brands/uoft.svg.png" alt="University of Toronto" class="company-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="how-it-works-content">
+                    <div class="section-header">
+                        <h2 class="section-title">From Manual to Automatic in 3 Simple Steps</h2>
+                        <p class="section-subtitle">Set up your first automation in under 5 minutes. No technical skills needed.</p>
+                    </div>
+
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-info">
+                                <div class="step-time-badge">30 seconds</div>
+                                <h3 class="step-title">01. Tell Us What You Do</h3>
+                                <p class="step-subtitle">Describe your task in plain English. Like talking to a colleague.</p>
+                                <p class="step-example">Example: "Copy customer data from emails to our spreadsheet"</p>
+                            </div>
+                            <div class="step-demo">
+                                <!-- GIF 1: Describing task in English -->
+                                <video src="replaceFirstGif.mp4" alt="Describing task in natural language" class="step-gif" autoplay muted loop></video>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step">
+                            <div class="step-info">
+                                <div class="step-time-badge">2 minutes</div>
+                                <h3 class="step-title">02. Show Us Once</h3>
+                                <p class="step-subtitle">Do your task once while Sisypho watches. We'll learn exactly what you do.</p>
+                                <p class="step-example">Just work normally - we handle the technical parts</p>
+                            </div>
+                            <div class="step-demo">
+                                <!-- GIF 2: Screen recording workflow -->
+                                <video src="step3vid.mp4" alt="Recording screen actions for automation" class="step-gif" autoplay muted loop></video>
+                            </div>
+                        </div>
+
+                        <div class="workflow-step">
+                            <div class="step-info">
+                                <div class="step-time-badge">1 minute</div>
+                                <h3 class="step-title">03. Done! It's Automated</h3>
+                                <p class="step-subtitle">Your task now runs automatically. Sisypho handles everything from here.</p>
+                                <p class="step-example">Run manually, schedule it, or trigger from other apps</p>
+                            </div>
+                            <div class="step-demo">
+                                <!-- GIF 3: Test and validation workflow -->
+                                <video src="lastStepWebsite.mp4" alt="Testing and validating automation workflow" class="step-gif" autoplay muted loop></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-cases" id="use-cases">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Real Automations, Real Time Savings</h2>
+                    <p class="section-subtitle">See how businesses automate CRM, ERP, and repetitive workflows</p>
+                </div>
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-header">
+                            <span class="use-case-category">CRM Automation</span>
+                            <span class="time-saved">Saves 2 hrs/day</span>
+                        </div>
+                        <h3 class="use-case-title">Customer Data from Emails to CRM</h3>
+                        <p class="use-case-description">Automatically extract customer information from incoming emails and update your CRM records. Perfect for sales teams and customer service departments.</p>
+                        <div class="use-case-steps">
+                            <div class="step">1. Email arrives with customer info</div>
+                            <div class="step">2. Sisypho extracts the data</div>
+                            <div class="step">3. CRM updated automatically</div>
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-header">
+                            <span class="use-case-category">Insurance Claims</span>
+                            <span class="time-saved">Saves 4 hrs/day</span>
+                        </div>
+                        <h3 class="use-case-title">Claims Processing Automation</h3>
+                        <p class="use-case-description">Extract data from claim forms, verify policy details, and update claim status across multiple systems. Reduce processing time from days to hours.</p>
+                        <div class="use-case-steps">
+                            <div class="step">1. Claim form submitted</div>
+                            <div class="step">2. Data extracted and verified</div>
+                            <div class="step">3. System updated automatically</div>
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-header">
+                            <span class="use-case-category">Recruiting</span>
+                            <span class="time-saved">Saves 3 hrs/day</span>
+                        </div>
+                        <h3 class="use-case-title">Candidate Screening Automation</h3>
+                        <p class="use-case-description">Parse resumes, extract key qualifications, and update candidate tracking systems. Screen hundreds of applicants in minutes, not hours.</p>
+                        <div class="use-case-steps">
+                            <div class="step">1. Resume received via email</div>
+                            <div class="step">2. Key data extracted automatically</div>
+                            <div class="step">3. Candidate profile created in ATS</div>
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-header">
+                            <span class="use-case-category">Accounting</span>
+                            <span class="time-saved">Saves 5 hrs/week</span>
+                        </div>
+                        <h3 class="use-case-title">Invoice to ERP Automation</h3>
+                        <p class="use-case-description">Extract data from PDF invoices, match with purchase orders, and sync with ERP systems. Eliminate manual data entry across accounting workflows.</p>
+                        <div class="use-case-steps">
+                            <div class="step">1. Invoice arrives via email</div>
+                            <div class="step">2. Data extracted and verified</div>
+                            <div class="step">3. QuickBooks updated automatically</div>
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-header">
+                            <span class="use-case-category">Healthcare Admin</span>
+                            <span class="time-saved">Saves 6 hrs/week</span>
+                        </div>
+                        <h3 class="use-case-title">Patient Record Management</h3>
+                        <p class="use-case-description">Process patient intake forms, update medical records, and sync with billing systems. Streamline administrative workflows in healthcare facilities.</p>
+                        <div class="use-case-steps">
+                            <div class="step">1. Patient form completed</div>
+                            <div class="step">2. Data extracted and validated</div>
+                            <div class="step">3. Records updated across systems</div>
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-header">
+                            <span class="use-case-category">Logistics</span>
+                            <span class="time-saved">Saves 3 hrs/day</span>
+                        </div>
+                        <h3 class="use-case-title">Inventory & Shipping Coordination</h3>
+                        <p class="use-case-description">Track shipments, update inventory levels, and coordinate between warehouse management and customer systems. Keep logistics running smoothly.</p>
+                        <div class="use-case-steps">
+                            <div class="step">1. Shipment status updated</div>
+                            <div class="step">2. Inventory levels adjusted</div>
+                            <div class="step">3. Customer notifications sent</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about Sisypho</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do I need coding skills to use Sisypho?</h3>
+                        <p class="faq-answer">No! Sisypho is designed for non-technical users. Just describe what you want in plain English and show us once. No coding, scripting, or technical knowledge required.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">How is this different from RPA tools?</h3>
+                        <p class="faq-answer">Traditional RPA tools require technical expertise and complex setup. Sisypho uses natural language and learns from watching you work once. Setup takes minutes, not weeks.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">What applications can Sisypho automate?</h3>
+                        <p class="faq-answer">Any application on your computer - desktop software, web browsers, spreadsheets, CRMs, ERPs, and more. If you can do it manually, Sisypho can automate it.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">How is this different from computer use agents?</h3>
+                        <p class="faq-answer">Unlike unpredictable AI agents, Sisypho uses a deterministic, human-in-the-loop approach. You show us your workflow once, we create reliable automations that work consistently. We're specifically trained on popular business software including QuickBooks, Sage, Salesforce, HubSpot, SAP, Oracle NetSuite, Epic EHR, and Cerner - ensuring reliable performance with the tools you already use.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">What if something goes wrong during automation?</h3>
+                        <p class="faq-answer">Sisypho includes intelligent error handling. It will try to self-correct common issues and notify you if manual intervention is needed. You can always review and adjust the automation.</p>
+                    </div>
+                </div>
+                <div class="faq-cta">
+                    <p class="faq-cta-text">Still have questions?</p>
+                    <a href="mailto:founders@sisypho.com" class="btn btn-primary">Contact Our Team</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="sisypho_logo.svg" alt="Sisypho" class="footer-logo-image">
+                        <span class="footer-logo-text">Sisypho</span>
+                    </div>
+                    <p>Intelligent automation for everyone</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#use-cases">Use Cases</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="mailto:founders@sisypho.com">Contact</a>
+                        <a href="privacy_policy.html">Privacy Policy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <p class="footer-address">108 College St<br>Toronto, ON M5G 0C6</p>
+                        <a href="mailto:founders@sisypho.com">founders@sisypho.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sisypho. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

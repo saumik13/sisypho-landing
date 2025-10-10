@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Sisypho</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4710XLGH23"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4710XLGH23');
+    </script>
+    
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+        
+        .success-page {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #ffffff;
+            padding: 60px 32px 32px;
+        }
+        
+        .success-card {
+            background: white;
+            padding: 48px;
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+        }
+        
+        .success-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 32px;
+            background: #059669;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .checkmark {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+            stroke-width: 2.5;
+            fill: none;
+        }
+        
+        .success-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 12px;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+        }
+        
+        .success-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 40px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        .return-message {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .return-message p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            color: #475569;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .download-note {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .download-note p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #166534;
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .download-link {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .download-link:hover {
+            text-decoration: underline;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #6b7280;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            padding: 16px 24px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: #f9fafb;
+            color: #374151;
+            border-color: #9ca3af;
+        }
+        
+        .support-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 24px;
+            font-weight: 400;
+        }
+        
+        .support-link {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .support-link:hover {
+            text-decoration: underline;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        
+        .footer {
+            background: #ffffff;
+            color: #111827;
+            padding: 40px 32px 20px;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .footer-logo-link {
+            text-decoration: none;
+        }
+        
+        .footer-logo-text {
+            font-family: 'DM Sans', sans-serif;
+            color: #4f46e5;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            transition: opacity 0.2s ease;
+        }
+        
+        .footer-logo-link:hover .footer-logo-text {
+            opacity: 0.8;
+        }
+        
+        .footer-brand p {
+            color: #6b7280;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 400;
+            margin: 0;
+            max-width: 250px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 40px;
+            justify-content: flex-start;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            color: #111827;
+            letter-spacing: -0.01em;
+        }
+        
+        .footer-column a {
+            display: block;
+            color: #6b7280;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: -0.01em;
+        }
+        
+        .footer-column a:hover {
+            color: #4f46e5;
+            transform: translateX(4px);
+        }
+        
+        .footer-address {
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            text-align: center;
+            color: #6b7280;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .success-page {
+                padding: 40px 20px 20px;
+            }
+            
+            .success-card {
+                padding: 32px 24px;
+            }
+            
+            .success-title {
+                font-size: 24px;
+            }
+            
+            .success-subtitle {
+                font-size: 15px;
+            }
+            
+            .success-icon {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 24px;
+            }
+            
+            .checkmark {
+                width: 24px;
+                height: 24px;
+            }
+            
+            
+            .footer {
+                padding: 40px 24px 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+                gap: 40px;
+            }
+            
+            .footer-brand p {
+                max-width: 100%;
+                margin: 16px auto 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <div class="success-card">
+            <div class="success-icon">
+                <svg class="checkmark" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <h1 class="success-title">Subscription Successful!</h1>
+            <p class="success-subtitle">
+                Your subscription went through successfully. You can now return to the Sisypho app. 
+            </p>
+            
+            <div class="return-message">
+                <p>You can now close this tab and return to Sisypho.</p>
+            </div>
+            
+            <div class="download-note">
+                <p>If you haven't already downloaded the app, please download the macOS app and Chrome extension from <a href="https://www.sisypho.com/" class="download-link">sisypho.com</a></p>
+            </div>
+            
+            <p class="support-text">
+                Need help? Contact us at <a href="mailto:saumik@sisypho.com" class="support-link">saumik@sisypho.com</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <a href="/" class="footer-logo-link">
+                        <span class="footer-logo-text">Sisypho</span>
+                    </a>
+                </div>
+                <p>Intelligent automation for everyone</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="/#how-it-works">How It Works</a>
+                    <a href="/#pricing">Pricing</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="/memo.html">Memo</a>
+                    <a href="mailto:saumik@sisypho.com">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-address">108 College St<br>Toronto, ON M5G 0C6</p>
+                    <a href="mailto:saumik@sisypho.com">saumik@sisypho.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sisypho. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Track successful payment conversion
+        if (typeof gtag !== 'undefined') {
+            // Track purchase conversion
+            gtag('event', 'purchase', {
+                transaction_id: Date.now().toString(), // Use timestamp as transaction ID
+                value: 30.00, // Assuming basic plan price
+                currency: 'USD',
+                items: [{
+                    item_id: 'sisypho_subscription',
+                    item_name: 'Sisypho Subscription',
+                    item_category: 'SaaS',
+                    quantity: 1,
+                    price: 30.00
+                }]
+            });
+            
+            // Track payment success event
+            gtag('event', 'payment_success', {
+                event_category: 'ecommerce',
+                event_label: 'subscription_purchase',
+                value: 30.00,
+                currency: 'USD'
+            });
+            
+            // Track page view with specific page type
+            gtag('event', 'page_view', {
+                page_title: 'Payment Success',
+                page_type: 'conversion',
+                conversion_type: 'subscription'
+            });
+        }
+    </script>
+</body>
+</html>
