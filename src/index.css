@@ -823,11 +823,443 @@ h1, h2, h3, h4 {
     font-family: 'DM Sans', sans-serif;
 }
 
+/* Chat Bubbles Only Styling */
+.chat-bubbles-container {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chat-messages-only {
+    padding: 20px;
+    height: 350px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.chat-messages-only::-webkit-scrollbar {
+    display: none;
+}
+
+.message {
+    display: flex;
+    transition: opacity 0.3s ease-out;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.ai-message {
+    justify-content: flex-start;
+}
+
+.message-content {
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.user-message .message-content {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.ai-message .message-content {
+    background: white;
+    color: #374151;
+    border-bottom-left-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.message-text {
+    white-space: pre-line;
+}
+
+
+/* Validation Demo Styling */
+.validation-demo-container {
+    max-width: 360px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 
+        0 8px 24px rgba(79, 70, 229, 0.08),
+        0 2px 8px rgba(79, 70, 229, 0.04),
+        0 0 0 1px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.validation-demo-container:hover {
+    box-shadow: 
+        0 12px 32px rgba(79, 70, 229, 0.12),
+        0 4px 12px rgba(79, 70, 229, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.validation-header {
+    background: #fafbfc;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.window-control {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.window-control.close {
+    background: #ff5f57;
+}
+
+.window-control.minimize {
+    background: #ffbd2e;
+}
+
+.window-control.maximize {
+    background: #28ca42;
+}
+
+.validation-content {
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.validation-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 4px;
+    background: #f1f3f4;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.validation-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    min-height: 120px;
+    position: relative;
+}
+
+.validation-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.step-slide-in {
+    animation: stepSlideIn 0.5s ease-out;
+}
+
+.step-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f3f4;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+}
+
+.validation-step.completed .step-icon {
+    background: #10b981;
+    animation: checkmarkPop 0.4s ease-out;
+}
+
+.step-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    font-family: 'DM Sans', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.validation-step.completed .step-text {
+    color: #1a1a1a;
+}
+
+.step-spinner {
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid #e5e7eb;
+    border-top: 1.5px solid #4f46e5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(0.8);
+        background: #e5e7eb;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        background: #10b981;
+    }
+}
+
+@keyframes stepSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Workflows List Styling */
+.workflows-list {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.workflows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.workflow-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.workflow-card:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.12);
+}
+
+.workflow-main {
+    flex: 1;
+}
+
+.workflow-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.workflow-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+    font-family: 'DM Sans', sans-serif;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.workflow-description {
+    font-size: 13px;
+    color: #64748b;
+    font-family: 'DM Sans', sans-serif;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+}
+
+.last-run {
+    font-size: 12px;
+    color: #94a3b8;
+    font-family: 'DM Sans', sans-serif;
+    font-style: italic;
+}
+
+.workflow-status {
+    flex-shrink: 0;
+}
+
+.run-button {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.run-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.workflows-footer {
+    margin-top: 16px;
+    padding: 12px 0;
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-item {
+    font-size: 12px;
+    color: #64748b;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+.stat-divider {
+    color: #cbd5e1;
+    font-size: 12px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .workflow-steps {
-        grid-template-columns: 1fr;
         gap: 32px;
+    }
+    
+    .chat-bubbles-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .chat-messages-only {
+        height: 280px;
+        padding: 16px;
+    }
+    
+    .message-content {
+        max-width: 85%;
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+    
+    .validation-demo-container {
+        max-width: 100%;
+    }
+    
+    .validation-content {
+        padding: 20px 16px;
+    }
+    
+    .validation-title {
+        font-size: 16px;
+        margin-bottom: 14px;
+    }
+    
+    .step-text {
+        font-size: 13px;
+    }
+    
+    .validation-steps {
+        gap: 10px;
+        min-height: 100px;
+    }
+    
+    .step-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .workflows-list {
+        max-width: 100%;
+    }
+    
+    
+    .workflows-container {
+        gap: 10px;
+    }
+    
+    .workflow-card {
+        padding: 14px 16px;
+    }
+    
+    .workflow-title {
+        font-size: 14px;
+    }
+    
+    .workflow-description {
+        font-size: 12px;
+    }
+    
+    .last-run {
+        font-size: 11px;
+    }
+    
+    .run-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .workflows-footer {
+        margin-top: 14px;
+    }
+    
+    .stat-item {
+        font-size: 11px;
     }
 }
 
