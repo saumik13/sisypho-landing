@@ -14,24 +14,18 @@ const HowItWorks: React.FC = () => {
             <div className="workflow-step">
               <div className="step-info">
                 <div className="step-time-badge">30 seconds</div>
-                <h3 className="step-title">01. Tell Us What You Do</h3>
+                <h3 className="step-title">01. Show and Tell</h3>
                 <p className="step-subtitle">Describe your task in plain English. Like talking to a colleague.</p>
-                <p className="step-example">Example: "Copy customer data from emails to our spreadsheet"</p>
-              </div>
-              <div className="step-demo">
-                <video src="/replaceFirstGif.mp4" className="step-gif" autoPlay muted loop></video>
+                <p className="step-example">Example: "Send out test results to patients who have not received them yet, along with any attached referral doctors as well."</p>
               </div>
             </div>
 
             <div className="workflow-step">
               <div className="step-info">
                 <div className="step-time-badge">2 minutes</div>
-                <h3 className="step-title">02. Show Us Once</h3>
-                <p className="step-subtitle">Do your task once while Sisypho watches. We'll learn exactly what you do.</p>
-                <p className="step-example">Just work normally - we handle the technical parts</p>
-              </div>
-              <div className="step-demo">
-                <video src="/step3vid.mp4" className="step-gif" autoPlay muted loop></video>
+                <h3 className="step-title">02. Validate</h3>
+                <p className="step-subtitle">Work with Sisypho as it validates your workflow, to ensure it performs as you expect.</p>
+                <p className="step-example">Sisypho will go through your workflow step by step, checking with you along the way.</p>
               </div>
             </div>
 
@@ -41,9 +35,6 @@ const HowItWorks: React.FC = () => {
                 <h3 className="step-title">03. Done! It's Automated</h3>
                 <p className="step-subtitle">Your task now runs automatically. Sisypho handles everything from here.</p>
                 <p className="step-example">Run manually, schedule it, or trigger from other apps</p>
-              </div>
-              <div className="step-demo">
-                <video src="/lastStepWebsite.mp4" className="step-gif" autoPlay muted loop></video>
               </div>
             </div>
           </div>

@@ -13,8 +13,9 @@ const Header: React.FC = () => {
         </div>
         <div className="nav-links">
           <a href="#how-it-works" className="nav-link">How It Works</a>
-          <a href="#use-cases" className="nav-link">Use Cases</a>
-          <a href="#faq" className="nav-link">FAQ</a>
+          <a href="#security" className="nav-link">Security</a>
+          {/*<a href="#use-cases" className="nav-link">Use Cases</a>
+          <a href="#faq" className="nav-link">FAQ</a>*/}
         </div>
       </nav>
     </header>
